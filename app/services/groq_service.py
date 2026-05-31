@@ -6,3 +6,9 @@ llm = ChatGroq(
     temperature=0,
     api_key=settings.GROQ_API_KEY
 )
+
+planner_llm = ChatGroq(
+    model="qwen/qwen3-32b",
+    temperature=0,
+    api_key=settings.GROQ_API_KEY
+)
