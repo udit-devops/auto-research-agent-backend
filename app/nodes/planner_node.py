@@ -23,8 +23,14 @@ Example:
     response = planner_llm.invoke(prompt)
     question = []
     for line in response.content.split("\n"):
-        if "?" in line:
-            question.append(line.strip())
+        line = line.strip()
+        if line.startswith('"') and line.endswith('",'):
+            question.append(line.strip('",'))
+        elif line.startswith('"') and line.endswith('"'):
+            question.append(line.strip('"'))
+
+    print("QUESTIONS:")
+    print(question)
         
 
 

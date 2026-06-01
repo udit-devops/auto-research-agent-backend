@@ -5,8 +5,17 @@ def research_node(state: ResearchState):
     questions = state['research_ques']
     all_results = []
     for question in questions:
+        findings = []
         result = tavily_client.search(question)
-        all_results.append({question: result})
+        for item in result['results'][:2]:
+            findings.append({
+                "title": item['title'],
+                "content": item['content'],
+            })
+        all_results.append({
+            "question": question,
+            "findings": findings
+        })
     
     return {
         "research_data": all_results
