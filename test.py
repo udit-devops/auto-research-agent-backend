@@ -12,7 +12,8 @@
 
 from app.graph.builder import app 
 
+
 result = app.invoke({
-    "topic": "Li.Fi company and its products"
+    "topic": "give 2 best tech companies as of may 2026"
 })
-print(result)
+print(result['report'])

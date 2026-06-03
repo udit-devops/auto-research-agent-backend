@@ -5,6 +5,7 @@ class ResearchState(TypedDict):
     research_ques:list[str]
     research_data:dict
     analysis:str
+    report:str
     
 
     
