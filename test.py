@@ -14,6 +14,7 @@ from app.graph.builder import app
 
 
 result = app.invoke({
-    "topic": "give 2 best tech companies as of may 2026"
+    "topic": "Ai healthcare agents"
+    
 })
 print(result['report'])

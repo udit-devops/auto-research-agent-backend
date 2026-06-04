@@ -4,6 +4,7 @@ class ResearchState(TypedDict):
     topic:str
     research_ques:list[str]
     research_data:dict
+    research_summary:str
     analysis:str
     report:str
     

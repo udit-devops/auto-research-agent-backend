@@ -10,7 +10,7 @@ def research_node(state: ResearchState):
         for item in result['results'][:2]:
             findings.append({
                 "title": item['title'],
-                "content": item['content'],
+                "content": item['content'][:200],
             })
         all_results.append({
             "question": question,
