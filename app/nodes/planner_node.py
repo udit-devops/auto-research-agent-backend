@@ -22,7 +22,7 @@ Return a Python list only.
 """
     response = planner_llm.invoke(prompt)
     content = response.content
-    print(response.content)
+    
     question = []
     if "</think>" in content:
         content = content.split("</think>")[-1].strip()

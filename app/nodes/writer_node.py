@@ -19,6 +19,10 @@ Analysis:
 {analysis}
 """
     response = llm.invoke(prompt)
+    content = response.content
+
+    if "</think>" in content:
+      content = content.split("</think>")[-1].strip()
     
     return{
         "report":response.content
