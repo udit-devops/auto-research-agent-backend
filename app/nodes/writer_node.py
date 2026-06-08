@@ -3,6 +3,8 @@ from app.services.groq_service import llm
 
 def writer_node(state:ResearchState):
     analysis = state['analysis']
+    print("ANALYSIS:")
+    print(analysis)
     prompt = f"""
 Create a professional research report.
 
@@ -25,5 +27,5 @@ Analysis:
       content = content.split("</think>")[-1].strip()
     
     return{
-        "report":response.content
+        "report":content
     }
