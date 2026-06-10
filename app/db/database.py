@@ -1,10 +1,12 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from app.db.models import Base
 
 DATABASE_URL = "sqlite:///./report.db"
 
 engine = create_engine(DATABASE_URL)
+Base.metadata.create_all(bind=engine)
 
 SessionLocal = sessionmaker(
-    autcommit=False, autoflush=False, bind=engine
+    autocommit=False, autoflush=False, bind=engine
 )
