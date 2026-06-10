@@ -7,6 +7,7 @@ class ResearchState(TypedDict):
     research_summary:str
     analysis:str
     report:str
+    sources:list[dict]
     
 
     

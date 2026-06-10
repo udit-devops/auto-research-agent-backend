@@ -10,13 +10,23 @@ class ResearchRequest(BaseModel):
 
 @router.post("/research")
 def generate_report(request: ResearchRequest):
-    result = flow.invoke(
+    try:
+         result = flow.invoke(
         {
             "topic": request.topic
         }
     )
-
-    return{
-        "report": result["report"]
+         return{
+        "report": result["report"],
+        "sources":result["sources"]
     }
+        
+
+   
+
+    
+    except Exception as e:
+        return {
+            "error": str(e)
+        }
 
