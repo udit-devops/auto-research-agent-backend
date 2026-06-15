@@ -23,6 +23,6 @@ Research Data:
         content = content.split("</think>")[-1].strip()
     return {
             "research_summary": content
-        }
+    }
 
 
