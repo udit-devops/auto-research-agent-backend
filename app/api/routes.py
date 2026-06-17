@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from app.graph.builder import app as flow
 from app.db.database import SessionLocal
 from app.db.models import Report
+from app.utils.pdf_generator import generate_pdf
 import json
 router = APIRouter()
 
@@ -29,6 +30,11 @@ def generate_report(request: ResearchRequest):
          )
          db.add(new_report)
          db.commit()
+         generate_pdf(
+             report_id=new_report.id,
+                topic=request.topic,
+                report=result["report"]
+         )
          db.close()
             
          return{
