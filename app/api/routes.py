@@ -43,7 +43,7 @@ def generate_report(request: ResearchRequest):
     }
         
 
-   
+#    added cors origin
 
     
     except Exception as e:
